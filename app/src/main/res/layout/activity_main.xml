@@ -8,25 +8,25 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/check_role_manager"
+        android:id="@id/check_role_manager"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Check using RoleManager"/>
 
     <Button
-        android:id="@+id/check_assist_utils"
+        android:id="@id/check_assist_utils"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Check using AssistUtils"/>
 
     <Button
-        android:id="@+id/request_role"
+        android:id="@id/request_role"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Request assistant role using RoleManager"/>
 
     <Button
-        android:id="@+id/open_voice_input_settings"
+        android:id="@id/open_voice_input_settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Open Settings.ACTION_VOICE_INPUT_SETTINGS"/>

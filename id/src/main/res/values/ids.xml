@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="check_role_manager" type="id"/>
+    <item name="check_assist_utils" type="id"/>
+    <item name="request_role" type="id"/>
+    <item name="open_voice_input_settings" type="id"/>
+</resources>

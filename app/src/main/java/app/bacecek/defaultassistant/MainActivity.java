@@ -1,9 +1,5 @@
 package app.bacecek.defaultassistant;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
 import android.app.role.RoleManager;
 import android.content.ComponentName;
 import android.content.Context;
@@ -13,8 +9,13 @@ import android.os.UserHandle;
 import android.provider.Settings;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
+
+import app.bacecek.defaultassistant.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_ASSISTANT_CODE = 123;
@@ -22,12 +23,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        findViewById(R.id.check_assist_utils).setOnClickListener(ignore -> checkUsingAssistUtils());
-        findViewById(R.id.check_role_manager).setOnClickListener(ignore -> checkUsingRoleManager());
-        findViewById(R.id.request_role).setOnClickListener(ignore -> requestAssistantRole());
-        findViewById(R.id.open_voice_input_settings).setOnClickListener(ignore -> openVoiceInputSettings());
+        binding.checkAssistUtils.setOnClickListener(ignore -> checkUsingAssistUtils());
+        binding.checkRoleManager.setOnClickListener(ignore -> checkUsingRoleManager());
+        binding.requestRole.setOnClickListener(ignore -> requestAssistantRole());
+        binding.openVoiceInputSettings.setOnClickListener(ignore -> openVoiceInputSettings());
     }
 
     private void checkUsingAssistUtils() {
@@ -36,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             showMessage("Something goes wrong :(");
             return;
         }
-        boolean isItMe = currentAssistant.getPackageName().equals(BuildConfig.APPLICATION_ID);
+        boolean isItMe = currentAssistant.getPackageName().equals(getPackageName());
         showMessage(String.format("Assistant package=%s\nIs it me? %s!",
                 currentAssistant.getPackageName(), (isItMe ? "Yes" : "No")));
     }
