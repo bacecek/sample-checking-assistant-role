@@ -1,34 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@android:color/holo_red_dark">
 
     <Button
-        android:id="@+id/check_role_manager"
+        android:id="@+id/enter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Check using RoleManager"/>
+        android:layout_gravity="top"
+        android:text="Enter"/>
 
     <Button
-        android:id="@+id/check_assist_utils"
+        android:id="@+id/exit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Check using AssistUtils"/>
+        android:layout_gravity="bottom"
+        android:text="Exit"/>
 
-    <Button
-        android:id="@+id/request_role"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Request assistant role using RoleManager"/>
 
-    <Button
-        android:id="@+id/open_voice_input_settings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Open Settings.ACTION_VOICE_INPUT_SETTINGS"/>
-
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
