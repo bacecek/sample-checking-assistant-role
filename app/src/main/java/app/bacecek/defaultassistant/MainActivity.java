@@ -2,6 +2,7 @@ package app.bacecek.defaultassistant;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.app.Activity;
 import android.app.role.RoleManager;
@@ -11,6 +12,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.lang.reflect.Constructor;
@@ -28,6 +30,11 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.check_role_manager).setOnClickListener(ignore -> checkUsingRoleManager());
         findViewById(R.id.request_role).setOnClickListener(ignore -> requestAssistantRole());
         findViewById(R.id.open_voice_input_settings).setOnClickListener(ignore -> openVoiceInputSettings());
+
+
+        AppDatabase db = Room.databaseBuilder(getApplicationContext(),
+                AppDatabase.class, "database-name").build();
+        Log.d("kek", "lol");
     }
 
     private void checkUsingAssistUtils() {
