@@ -1,18 +1,19 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
 }
 
 android {
-    compileSdkVersion 33
+    namespace 'dev.bacecek.dependency'
+    compileSdk 33
 
     defaultConfig {
-        applicationId "app.bacecek.defaultassistant"
-        minSdkVersion 29
-        targetSdkVersion 33
-        versionCode 1
-        versionName "1.0"
+        minSdk 24
+        targetSdk 33
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -25,12 +26,12 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'com.google.android.material:material:1.1.0'
+    api("com.yandex.yatagan:api-compiled:1.0.0")
     kapt("com.yandex.yatagan:processor-jap:1.0.0")
-
-    implementation(project(":dependency"))
 }

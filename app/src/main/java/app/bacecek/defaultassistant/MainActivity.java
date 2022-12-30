@@ -13,6 +13,10 @@ import android.os.UserHandle;
 import android.provider.Settings;
 import android.widget.Toast;
 
+import com.yandex.yatagan.Yatagan;
+
+import org.example.dependency.Enclosing;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
