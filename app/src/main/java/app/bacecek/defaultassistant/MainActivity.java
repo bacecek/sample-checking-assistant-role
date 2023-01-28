@@ -3,7 +3,6 @@ package app.bacecek.defaultassistant;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.app.role.RoleManager;
 import android.content.ComponentName;
 import android.content.Context;
@@ -12,10 +11,6 @@ import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.widget.Toast;
-
-import com.yandex.yatagan.Yatagan;
-
-import org.example.dependency.Enclosing;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;

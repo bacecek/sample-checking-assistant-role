@@ -13,6 +13,8 @@ android {
         targetSdkVersion 33
         versionCode 1
         versionName "1.0"
+
+        manifestPlaceholders += ['permissionSuffix': 'app']
     }
 
     buildTypes {
@@ -32,5 +34,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.1.0'
     kapt("com.yandex.yatagan:processor-jap:1.0.0")
 
-    implementation(project(":dependency"))
+    implementation(project(":another-dependency"))
+
+    testImplementation("junit:junit:4.12")
 }
