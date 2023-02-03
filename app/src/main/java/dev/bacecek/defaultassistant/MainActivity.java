@@ -1,4 +1,4 @@
-package app.bacecek.defaultassistant;
+package dev.bacecek.defaultassistant;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;

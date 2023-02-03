@@ -4,10 +4,11 @@ plugins {
 }
 
 android {
+    namespace = "dev.bacecek.defaultassistant"
     compileSdkVersion 33
 
     defaultConfig {
-        applicationId "app.bacecek.defaultassistant"
+        applicationId "dev.bacecek.defaultassistant"
         minSdkVersion 29
         targetSdkVersion 33
         versionCode 1
